@@ -27,7 +27,7 @@
            
             android:exported="false" />
         <activity
-            android:name=".change_password"
+            android:name=".ChangePassword"
 
             android:exported="false" />
         <activity
