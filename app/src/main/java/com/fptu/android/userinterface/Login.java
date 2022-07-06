@@ -94,7 +94,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             editPassword.requestFocus();
             return;
         }
-
+//sss
         mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
