@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 userLogin();
                 break;
             case R.id.btnchange:
-                startActivity(new Intent(this, change_password.class));
+                startActivity(new Intent(this, ChangePassword.class));
         }
     }
 

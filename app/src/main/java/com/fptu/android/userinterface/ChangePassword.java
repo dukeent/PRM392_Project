@@ -15,7 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class change_password extends AppCompatActivity {
+public class ChangePassword extends AppCompatActivity {
   private EditText emailEdit;
   private Button resetPassBtn;
     private FirebaseAuth mAuth;
@@ -48,9 +48,9 @@ public class change_password extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(change_password.this,"Please check your email",Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(change_password.this, Login.class));
-                }else Toast.makeText(change_password.this,"some thing went wrong!Please try again!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ChangePassword.this,"Please check your email",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(ChangePassword.this, Login.class));
+                }else Toast.makeText(ChangePassword.this,"some thing went wrong!Please try again!",Toast.LENGTH_LONG).show();
             }
         });
 
