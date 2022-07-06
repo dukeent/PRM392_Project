@@ -1,5 +1,11 @@
 package com.fptu.android.userinterface;
 
+
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -96,7 +102,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
                     startActivity(new Intent(Login.this, ViewStaff.class));
+
+                    //startActivity(new Intent(Login.this, ViewProduct.class));//
+
                 } else {
                     Toast.makeText(Login.this, "Fail to login", Toast.LENGTH_LONG).show();
                 }
