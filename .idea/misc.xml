@@ -3,9 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
-        <entry key="..\:/project1/PRM392_Project-master (2)/PRM392_Project-master/PRM392_Project/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
-
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_change_password.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_login.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_main.xml" value="0.2644927536231884" />
@@ -14,13 +11,12 @@
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/item_products.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/QMC/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_change_password.xml" value="0.25" />
         <entry key="..\:/Users/QMC/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
-
+        <entry key="..\:/Users/solov/Documents/GitHub/PRM392_Project/app/src/main/res/drawable/header_background.xml" value="0.2715" />
         <entry key="..\:/Users/solov/Documents/GitHub/PRM392_Project/app/src/main/res/drawable/ic_baseline_flare_24.xml" value="0.2555" />
-        <entry key="..\:/Users/solov/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/solov/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_main.xml" value="0.23076923076923078" />
         <entry key="..\:/Users/solov/Documents/GitHub/PRM392_Project/app/src/main/res/layout/item_products.xml" value="0.371875" />
         <entry key="..\:/Users/solov/Documents/GitHub/PRM392_Project/app/src/main/res/menu/menu.xml" value="0.371875" />
-
-
+        <entry key="..\:/project1/PRM392_Project-master (2)/PRM392_Project-master/PRM392_Project/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
       </map>
     </option>
   </component>
