@@ -7,8 +7,9 @@
     tools:context=".UserProfile"
     android:background="#F4FA58">
 
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imaguser"
         android:layout_width="141dp"
         android:layout_height="98dp"
         app:layout_constraintBottom_toBottomOf="parent"
