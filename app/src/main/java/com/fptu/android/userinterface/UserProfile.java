@@ -34,6 +34,7 @@ public class UserProfile extends AppCompatActivity {
         final TextView tvgreeting = findViewById(R.id.tvGreeding);
         final TextView tvusername = findViewById(R.id.name);
         final TextView tvemail = findViewById(R.id.userEmail);
+        final TextView tvphone=findViewById(R.id.tvphone);
 
 
 
@@ -44,14 +45,15 @@ public class UserProfile extends AppCompatActivity {
 
                 if(userProfile != null){
 
-                    String fullName= snapshot.child("name").getValue().toString();;
+                    String fullName= snapshot.child("name").getValue().toString();
                     String email = user.getEmail();
+                    String phone = snapshot.child("phone").getValue().toString();
 
-                    tvgreeting.setText("welcome: "+fullName );
+                    tvgreeting.setText("welcome to your Profile " );
 
                     tvusername.setText("Name: "+fullName);
-                    tvemail.setText("Email: "+email);
-
+                    tvemail.setText(""+email);
+                    tvphone.setText(""+phone);
                 }
             }
 

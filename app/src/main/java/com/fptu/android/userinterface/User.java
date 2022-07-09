@@ -2,20 +2,29 @@ package com.fptu.android.userinterface;
 
 public class User {
     private String userName;
-    private String email, password;
+    private String email, password,phone;
 
     public User() {
 
     }
 
-    public User(String userName, String email, String password) {
+    public User(String userName, String email, String password,String phone) {
         this.userName = userName;
         this.email = email;
         this.password= password;
+        this.phone = phone;
     }
 
-    public String getDisplayName() {
+    public String getName() {
         return userName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getPassword() {
