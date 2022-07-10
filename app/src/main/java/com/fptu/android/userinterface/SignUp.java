@@ -86,7 +86,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             editPassword.requestFocus();
         }
         if (password.length() < 6) {
-            editPassword.setError("Password should longer than 6 bro");
+            editPassword.setError("Password should longer than 6! ");
             editPassword.requestFocus();
             return;
 

@@ -62,6 +62,10 @@ public class UserProfile extends AppCompatActivity {
                     tvemail.setText(""+email);
                     tvphone.setText(""+phone);
                 }
+                else{
+                    Toast.makeText(UserProfile.this, "you haven't login yet pleas login!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(UserProfile.this, Login.class));
+                }
             }
 
             @Override
