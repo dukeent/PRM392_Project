@@ -32,6 +32,7 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
         user= FirebaseAuth.getInstance().getCurrentUser();
         userId=user.getUid();
         reference= FirebaseDatabase.getInstance().getReference("User");
@@ -70,7 +71,7 @@ public class UserProfile extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(UserProfile.this, "somthing went wrong :( ", Toast.LENGTH_LONG).show();
+                Toast.makeText(UserProfile.this, "something went wrong :( ", Toast.LENGTH_LONG).show();
             }
         });
         // seld destruction button
