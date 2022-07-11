@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private Button logOut;
@@ -37,10 +36,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-
                 startActivity(new Intent(MainActivity.this, Login.class));
-                Toast.makeText(MainActivity.this, "logout success", Toast.LENGTH_LONG).show();
+
             }
         });
 
