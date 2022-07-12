@@ -79,16 +79,16 @@ public class UserProfile extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(UserProfile.this, "something went wrong :( ", Toast.LENGTH_LONG).show();
             }
-            });
+        });
+
         // self destruction button
-        logOut.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(UserProfile.this, Login.class));
                 Toast.makeText(UserProfile.this, "logout success", Toast.LENGTH_LONG).show();
             }
-            });
-        };
+        });
     }
 }
