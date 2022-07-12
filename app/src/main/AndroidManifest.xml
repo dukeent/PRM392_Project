@@ -27,6 +27,9 @@
            
             android:exported="false" />
         <activity
+            android:name=".ViewHair"
+            android:exported="false" />
+        <activity
             android:name=".change_password"
 
             android:exported="false" />
