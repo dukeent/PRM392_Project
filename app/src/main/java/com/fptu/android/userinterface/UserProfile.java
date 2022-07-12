@@ -21,9 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class UserProfile extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
-
     private Button logOut;
-
 
 
     private String userId;
@@ -33,37 +31,47 @@ public class UserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
-        user= FirebaseAuth.getInstance().getCurrentUser();
-        userId=user.getUid();
-        reference= FirebaseDatabase.getInstance().getReference("User");
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        userId = user.getUid();
+        reference = FirebaseDatabase.getInstance().getReference("User");
 
         final TextView tvgreeting = findViewById(R.id.tvGreeding);
         final TextView tvusername = findViewById(R.id.name);
         final TextView tvemail = findViewById(R.id.userEmail);
-        final TextView tvphone=findViewById(R.id.tvphone);
+        final TextView tvphone = findViewById(R.id.tvphone);
 
         logOut = findViewById(R.id.btnlogout2);
-
 
 
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-              User userProfile=snapshot.getValue(User.class);
+                User userProfile = snapshot.getValue(User.class);
 
-                if(userProfile != null){
-
-                    String fullName= snapshot.child("name").getValue().toString();
-                    String email = user.getEmail();
-                    String phone = snapshot.child("phone").getValue().toString();
-
-                    tvgreeting.setText("welcome to your Profile " );
-
-                    tvusername.setText("Name: "+fullName);
-                    tvemail.setText(""+email);
-                    tvphone.setText(""+phone);
-                }
-                else{
+                if (userProfile != null) {
+                    String fullName;
+                    if (snapshot.child("name").getValue() == null) {
+                        fullName = "Full name is empty";
+                    } else {
+                        fullName = snapshot.child("name").getValue().toString();
+                    }
+                    String email;
+                    if (user.getEmail() == null) {
+                        email = "Email is empty";
+                    } else {
+                        email = user.getEmail();
+                    }
+                    String phone;
+                    if (snapshot.child("phone").getValue() == null) {
+                        phone = "Phone is empty";
+                    } else {
+                        phone = snapshot.child("phone").getValue().toString();
+                    }
+                    tvgreeting.setText("welcome to your Profile ");
+                    tvusername.setText("Name: " + fullName);
+                    tvemail.setText("" + email);
+                    tvphone.setText("" + phone);
+                } else {
                     Toast.makeText(UserProfile.this, "you haven't login yet pleas login!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(UserProfile.this, Login.class));
                 }
@@ -74,16 +82,14 @@ public class UserProfile extends AppCompatActivity {
                 Toast.makeText(UserProfile.this, "something went wrong :( ", Toast.LENGTH_LONG).show();
             }
         });
-        // seld destruction button
+        // self destruction button
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-
                 startActivity(new Intent(UserProfile.this, Login.class));
                 Toast.makeText(UserProfile.this, "logout success", Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }
