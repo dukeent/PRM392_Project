@@ -4,7 +4,6 @@ package com.fptu.android.userinterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        logOut = findViewById(R.id.btnlogout);
+//        logOut = findViewById(R.id.btnlogout);
         bottomNavigationView = findViewById(R.id.bottomNavigation) ;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         // secssion
@@ -33,13 +32,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //            // No user is signed in
             // nếu user chưa login thì chuyển về trang login
 //        }
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Login.class));
-
-            }
-        });
+//        logOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, Login.class));
+//
+//            }
+//        });
 
 
     }
