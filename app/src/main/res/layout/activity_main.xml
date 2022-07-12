@@ -10,16 +10,16 @@
 
     <ViewFlipper
         android:id="@+id/viewFlipper"
-        android:layout_width="390dp"
-        android:layout_height="226dp"
-        android:layout_marginTop="436dp"
+        android:layout_width="386dp"
+        android:layout_height="225dp"
+        android:layout_marginBottom="90dp"
         android:autoStart="true"
         android:flipInterval="2500"
         android:inAnimation="@android:anim/slide_in_left"
         android:outAnimation="@android:anim/slide_out_right"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:layout_width="match_parent"
@@ -72,17 +72,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <Button
-        android:id="@+id/btnlogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
@@ -96,18 +85,15 @@
         app:menu="@menu/menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <LinearLayout
-        android:layout_width="414dp"
-        android:layout_height="218dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="410dp"
+        android:layout_height="209dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/viewFlipper"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogout">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="73dp"
+            android:layout_height="65dp"
             android:orientation="horizontal">
 
             <LinearLayout
