@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private Button logOut;
+    private ImageView booking;
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -22,8 +24,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         logOut = findViewById(R.id.btnlogout);
+        booking = findViewById(R.id.bookingBtn);
         bottomNavigationView = findViewById(R.id.bottomNavigation) ;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
         // secssion
 //        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 //        if (user != null) {
@@ -41,6 +45,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
         });
 
+        booking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( MainActivity.this, BookingActivity.class));
+            }
+        });
 
     }
 

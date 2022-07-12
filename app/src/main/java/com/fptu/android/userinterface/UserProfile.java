@@ -21,7 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 public class UserProfile extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
-
     private Button logOut;
 
 
@@ -31,8 +30,15 @@ public class UserProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
+      
         user = FirebaseAuth.getInstance().getCurrentUser();
+        userId = user.getUid();
+        reference = FirebaseDatabase.getInstance().getReference("User");
+
+        final TextView tvgreeting = findViewById(R.id.tvGreeding);
+        final TextView tvusername = findViewById(R.id.name);
+        final TextView tvemail = findViewById(R.id.userEmail);
+        final TextView tvphone = findViewById(R.id.tvphone);
         if (user == null) {
             Toast.makeText(UserProfile.this, "you haven't login yet pleas login!", Toast.LENGTH_LONG).show();
             startActivity(new Intent(UserProfile.this, Login.class));
@@ -49,7 +55,37 @@ public class UserProfile extends AppCompatActivity {
 
             logOut = findViewById(R.id.btnlogout2);
 
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
 
+                if (userProfile != null) {
+                    String fullName;
+                    if (snapshot.child("name").getValue() == null) {
+                        fullName = "Full name is empty";
+                    } else {
+                        fullName = snapshot.child("name").getValue().toString();
+                    }
+                    String email;
+                    if (user.getEmail() == null) {
+                        email = "Email is empty";
+                    } else {
+                        email = user.getEmail();
+                    }
+                    String phone;
+                    if (snapshot.child("phone").getValue() == null) {
+                        phone = "Phone is empty";
+                    } else {
+                        phone = snapshot.child("phone").getValue().toString();
+                    }
+                    tvgreeting.setText("welcome to your Profile ");
+                    tvusername.setText("Name: " + fullName);
+                    tvemail.setText("" + email);
+                    tvphone.setText("" + phone);
+                } else {
+                    Toast.makeText(UserProfile.this, "you haven't login yet pleas login!", Toast.LENGTH_LONG).show();
+                  
             reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -79,10 +115,25 @@ public class UserProfile extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     FirebaseAuth.getInstance().signOut();
-
                     startActivity(new Intent(UserProfile.this, Login.class));
                     Toast.makeText(UserProfile.this, "logout success", Toast.LENGTH_LONG).show();
                 }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(UserProfile.this, "something went wrong :( ", Toast.LENGTH_LONG).show();
+            }
+        });
+        // self destruction button
+        logOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(UserProfile.this, Login.class));
+                Toast.makeText(UserProfile.this, "logout success", Toast.LENGTH_LONG).show();
+            }
+        });
             });
         }
 
