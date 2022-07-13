@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseDateActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ChooseDateActivity">
 
 
     <LinearLayout
@@ -13,39 +13,48 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
+        android:padding="10dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
+
         <ImageView
             android:id="@+id/salonImg"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:src="@drawable/salon" />
-
         <TextView
             android:id="@+id/salonAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
             android:fontFamily="sans-serif-condensed-light"
             android:text="You are choosing: Salon 2, Duc dep trai"
             android:textColor="#093960"
             android:textSize="20dp"
             android:textStyle="bold" />
-
         <Button
             android:id="@+id/chooseDateBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:allowClickWhenDisabled="true"
             android:text="Select date" />
+        <TextView
+            android:id="@+id/date_Textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="Select Date"
+            android:padding="10dp" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_timeSlots"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="3"
             tools:listitem="@layout/item_slot" />
+
         <Button
             android:id="@+id/bookNowBtn"
             android:layout_width="wrap_content"
@@ -54,16 +63,4 @@
             android:text="Book Now" />
     </LinearLayout>
 
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu"></com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>
