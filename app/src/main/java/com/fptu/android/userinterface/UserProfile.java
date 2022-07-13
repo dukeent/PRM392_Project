@@ -1,5 +1,6 @@
 package com.fptu.android.userinterface;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,22 +23,21 @@ public class UserProfile extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
     private Button logOut;
-
+    private Context context;
     private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
+        context = getApplicationContext();
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
             Toast.makeText(UserProfile.this, "You haven't login yet please login!", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(UserProfile.this, Login.class));
+            startActivity(new Intent(context, Login.class));
         } else {
             userId = user.getUid();
             reference = FirebaseDatabase.getInstance().getReference("User");
-
             final TextView tvgreeting = findViewById(R.id.tvGreeding);
             final TextView tvusername = findViewById(R.id.name);
             final TextView tvemail = findViewById(R.id.userEmail);

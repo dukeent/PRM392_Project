@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //            // No user is signed in
             // nếu user chưa login thì chuyển về trang login
 //        }
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Login.class));
-
-            }
-        });
+//        logOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, Login.class));
+//
+//            }
+//        });
 
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
