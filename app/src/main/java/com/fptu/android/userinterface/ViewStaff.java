@@ -33,7 +33,9 @@ public class ViewStaff extends AppCompatActivity {
         rcvUser.setLayoutManager(new LinearLayoutManager(ViewStaff.this));
         //co dong ke de phan cach giua cac item
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        DividerItemDecoration dividerItemDecoration2 = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
         rcvUser.addItemDecoration(dividerItemDecoration);
+        rcvUser.addItemDecoration(dividerItemDecoration2);
 
     }
 
@@ -47,7 +49,7 @@ public class ViewStaff extends AppCompatActivity {
         databaseReferenceProduct = FirebaseDatabase.
                 getInstance("https://userinterface2-default-rtdb.firebaseio.com")
                 .getReference("/Staff/");
-        //Product product = new Product(123, "hello");
+
 
 
         databaseReferenceProduct.addValueEventListener(new ValueEventListener() {
@@ -55,7 +57,6 @@ public class ViewStaff extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 staffList = new ArrayList<>();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    //Log.d("aaa", "onDataChange: " + dataSnapshot.getValue());
                     Staff staff = dataSnapshot.getValue(Staff.class);
                     staffList.add(staff);
                 }
