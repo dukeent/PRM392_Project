@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#fff"
-    tools:context=".Login"
+    android:orientation="vertical"
     android:padding="20dp"
-    >
+    tools:context=".Login">
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="150dp"
@@ -39,17 +39,16 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
             android:hint="Email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -58,18 +57,17 @@
 
         <com.google.android.material.textfield.TextInputLayout
 
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Password"
-            app:passwordToggleEnabled="true"
-            >
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -84,6 +82,7 @@
             android:background="#f5d142"
             android:text="Sign In"
             android:textColor="#000" />
+
         <Button
             android:id="@+id/btnsignup"
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.fptu.android.userinterface;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,7 +34,9 @@ public class ViewProduct extends AppCompatActivity {
         rcvUser.setLayoutManager(new LinearLayoutManager(ViewProduct.this));
         //co dong ke de phan cach giua cac item
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        DividerItemDecoration dividerItemDecoration2 = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
         rcvUser.addItemDecoration(dividerItemDecoration);
+        rcvUser.addItemDecoration(dividerItemDecoration2);
 
     }
 
@@ -77,6 +80,8 @@ public class ViewProduct extends AppCompatActivity {
         setContentView(R.layout.activity_view_product);
         bindingView();
         bindingAction();
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        rcvUser.setLayoutManager(gridLayoutManager);
     }
 
 
