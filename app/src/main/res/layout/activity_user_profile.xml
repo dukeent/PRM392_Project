@@ -108,13 +108,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fece2f"
+            android:fontFamily="@font/bungee"
             android:text="Logout"
             android:textColor="@color/black"
-            android:fontFamily="@font/bungee"
 
-           />
+            />
     </LinearLayout>
-
 
 
 </LinearLayout>

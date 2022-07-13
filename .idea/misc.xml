@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/drawable/rectangle_fill.xml" value="0.141" />
+        <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/drawable/rectangle_outline.xml" value="0.141" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/activity_booking.xml" value="0.25" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/activity_change_password.xml" value="0.25" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/activity_choose_date.xml" value="0.25" />
@@ -13,7 +15,9 @@
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/activity_view_product.xml" value="0.25" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/activity_view_staff.xml" value="0.25" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/booking_item.xml" value="0.24895833333333334" />
+        <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/item_header.xml" value="0.20427350427350427" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/item_products.xml" value="0.25" />
+        <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/item_slot.xml" value="0.24895833333333334" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/layout/list_staff.xml" value="0.25" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/menu/booking_menu.xml" value="0.24895833333333334" />
         <entry key="..\:/Code/Android/Userinterface2/app/src/main/res/menu/menu.xml" value="0.25" />

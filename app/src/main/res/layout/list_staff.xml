@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp"
-    >
+    android:padding="10dp">
 
     <ImageView
         android:id="@+id/imageProduct"
@@ -19,16 +18,17 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="name : name 1"/>
+        android:text="name : name 1" />
 
     <TextView
         android:id="@+id/tv_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gender : gender 1"/>
+        android:text="gender : gender 1" />
+
     <TextView
         android:id="@+id/tv_specialized"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="specialized : specialized 1"/>
+        android:text="specialized : specialized 1" />
 </LinearLayout>
