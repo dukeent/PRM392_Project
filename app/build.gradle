@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.5'
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'me.relex:circleindicator:2.1.6'
+
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     implementation 'com.google.firebase:firebase-firestore:24.2.0'
