@@ -23,9 +23,9 @@
             android:name=".ViewHair"
             android:exported="false" />
         <activity
-            android:name=".change_password"
-
-
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
             android:name=".BookingActivity"
             android:exported="false" />
         <activity
