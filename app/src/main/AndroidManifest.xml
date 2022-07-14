@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Userinterface"
         tools:targetApi="31">
         <activity
+            android:name=".Rate"
+            android:exported="false" />
+        <activity
             android:name=".ChooseDateActivity"
             android:exported="false" />
         <activity
@@ -37,11 +40,16 @@
             android:name=".SignUp"
             android:exported="false" />
         <activity
+            android:name=".RateDialog"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".WheelSpin"
             android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="false">
+
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->

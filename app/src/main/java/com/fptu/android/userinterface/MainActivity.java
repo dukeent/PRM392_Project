@@ -2,6 +2,7 @@ package com.fptu.android.userinterface;
 
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         booking = findViewById(R.id.bookingBtn);
         bottomNavigationView = findViewById(R.id.bottomNavigation) ;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
 
         // secssion
 //        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(new Intent(this, UserProfile.class));
                 return true ;
             case R.id.item4:
-                startActivity(new Intent(this, WheelSpin.class));
+                startActivity(new Intent(this, Rate.class));
                 Toast.makeText(MainActivity.this, "item4", Toast.LENGTH_LONG).show();
                 return true ;
             case R.id.item3:

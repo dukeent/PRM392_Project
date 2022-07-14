@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/drawable/round_back_blue_10.xml" value="0.1465" />
+        <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/drawable/round_back_brown_6.xml" value="0.1465" />
+        <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/drawable/round_back_while_stoke_1000.xml" value="0.249" />
+        <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/drawable/round_back_white_1000.xml" value="0.131" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_change_password.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_login.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_main.xml" value="0.2644927536231884" />
+        <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_rate.xml" value="0.264" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_sign_up.xml" value="0.2644927536231884" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_user_profile.xml" value="0.2171875" />
         <entry key="..\:/Users/Admin/OneDrive/Documents/GitHub/PRM392_Project/app/src/main/res/layout/activity_view_product.xml" value="0.27447916666666666" />
