@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private LinearLayout booking, signin, lucky, staff, history, rating;
@@ -24,16 +25,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         booking = findViewById(R.id.bookingBtn1);
 
 
-        signin = findViewById(R.id.Loginbtn1);
+        signin = findViewById(R.id.productbtn1);
         lucky = findViewById(R.id.luckybtn1);
         staff = findViewById(R.id.viewstaffbtn1);
         history = findViewById(R.id.historybtn1);
         rating = findViewById(R.id.ratingbtn1);
-        user = FirebaseAuth.getInstance().getCurrentUser();
-//        if (user != null) {
-//            Toast.makeText(MainActivity.this, "you have alredy Login ", Toast.LENGTH_LONG).show();
-//            startActivity(new Intent(MainActivity.this, UserProfile.class));
-//        }
+
 
 
         bottomNavigationView = findViewById(R.id.bottomNavigation);
