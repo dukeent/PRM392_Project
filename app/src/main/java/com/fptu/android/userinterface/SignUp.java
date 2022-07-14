@@ -22,7 +22,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private TextView banner;
     public Button registerUser, signinUser;
     private FirebaseAuth mAth;
-    private EditText editUsername, editPassword, editEmail,editPhone;
+    private EditText editUsername, editPassword, editEmail, editPhone;
 
 
     @Override
@@ -63,7 +63,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private void RegisterUser() {
         String email = editEmail.getText().toString().trim();
         String password = editPassword.getText().toString().trim();
-        String phone =editPhone.getText().toString().trim();
+        String phone = editPhone.getText().toString().trim();
         String userName = editUsername.getText().toString().trim();
         if (userName.isEmpty()) {
             editUsername.setError("Name is Required");
@@ -106,18 +106,12 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         }
 
 
-
-
-
-
-
-
         mAth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            User user = new User(userName, email,password,phone);
+                            User user = new User(userName, email, password, phone);
                             FirebaseDatabase.getInstance().getReference("User")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

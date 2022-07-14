@@ -1,31 +1,29 @@
 package com.fptu.android.userinterface;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 
 public class ChooseDateActivity extends AppCompatActivity {
 
@@ -40,7 +38,8 @@ public class ChooseDateActivity extends AppCompatActivity {
     private String bookingDate;
     private DatabaseReference bookingRef;
     private FirebaseUser user;
-
+    private String salonAddress;
+    private DatabaseReference userReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +48,6 @@ public class ChooseDateActivity extends AppCompatActivity {
         BindingAction();
 
     }
-
 
     private void ChooseDate() {
         Calendar calendar = Calendar.getInstance();
@@ -118,6 +116,7 @@ public class ChooseDateActivity extends AppCompatActivity {
         } else {
             Salon salon = (Salon) bundle.get("Salon");
             TextView textView = findViewById(R.id.salonAddress);
+            salonAddress  = salon.getSalonAddress();
             textView.setText("You are choosing: " + salon.getSalonAddress());
         }
 
@@ -159,16 +158,20 @@ public class ChooseDateActivity extends AppCompatActivity {
     }
 
     private void InsertBookingData() {
-        Bundle bundle = getIntent().getExtras();
-        Salon salon = (Salon) bundle.get("Salon");
-        String slot1 = (String) getIntent().getExtras().get("Slot");
-        String salonAddress = salon.getSalonAddress();
+        userReference =  FirebaseDatabase.getInstance().getReference("User");
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = user.getUid();
+        String slot =  timeSlotAdapter.getItemSelected();
         String date = bookingDate;
-        if (date == null) {
-            Toast.makeText(ChooseDateActivity.this, "Please Input date!", Toast.LENGTH_LONG).show();
+        if (date == null || slot == null) {
+            if(date == null){
+                Toast.makeText(ChooseDateActivity.this, "Please Input date!", Toast.LENGTH_LONG).show();
+            }
+            if(slot == null){
+                Toast.makeText(ChooseDateActivity.this, "Please select 1 Slot!", Toast.LENGTH_LONG).show();
+            }
         } else {
-            String slot = slot1;
-            Booking booking = new Booking(salonAddress, date, slot);
+            Booking booking = new Booking(salonAddress, date, slot, userId);
             bookingRef.push().setValue(booking);
             Toast.makeText(ChooseDateActivity.this, "Booking Success!", Toast.LENGTH_LONG).show();
         }
