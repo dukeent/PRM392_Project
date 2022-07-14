@@ -5,46 +5,42 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
-    private Button logOut;
-    private ImageView booking;
+    private LinearLayout booking,signin,lucky,staff,history,rating;
     BottomNavigationView bottomNavigationView;
+    private DatabaseReference reference;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //logOut = findViewById(R.id.btnlogout);
-        booking = findViewById(R.id.bookingBtn);
+        booking = findViewById(R.id.bookingBtn1);
+
+        signin = findViewById(R.id.Loginbtn1);
+        lucky=findViewById(R.id.luckybtn1);
+        staff=findViewById(R.id.viewstaffbtn1);
+        history=findViewById(R.id.historybtn1);
+        rating=findViewById(R.id.ratingbtn1);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            Toast.makeText(MainActivity.this, "you have alredy Login ", Toast.LENGTH_LONG).show();
+            startActivity(new Intent( MainActivity.this, UserProfile.class));
+        }
+
         bottomNavigationView = findViewById(R.id.bottomNavigation) ;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
-        // secssion
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        if (user != null) {
-//            // User is signed in
-                // nếu user đã login thì cho phép mua hàng
-//        } else {
-//            // No user is signed in
-            // nếu user chưa login thì chuyển về trang login
-//        }
-//        logOut.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, Login.class));
-//
-//            }
-//        });
-
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +48,43 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
         });
 
+        signin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent( MainActivity.this, Login.class));
     }
+});
+        lucky.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent( MainActivity.this, WheelSpin.class));
+            }
+        });
+        staff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent( MainActivity.this, ViewStaff.class));
+            }
+        });
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                startActivity(new Intent( MainActivity.this, ViewStaff.class)); boking history duke
+            }
+        });
+        rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                startActivity(new Intent( MainActivity.this, ViewStaff.class)); ratting của hải
+            }
+        });
+
+
+
+
+
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -62,16 +94,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(new Intent(this, UserProfile.class));
                 return true ;
             case R.id.item4:
-                Toast.makeText(MainActivity.this, "item4", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(this, BookingActivity.class));
+
                 return true ;
             case R.id.item3:
-                startActivity(new Intent(this, ViewStaff.class));
+                startActivity(new Intent(this,ViewStaff .class));
                 return true ;
             case R.id.item2:
                 startActivity(new Intent(this, ViewProduct.class));
                 return true ;
             case R.id.item1:
-                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_LONG).show();
+
                 return true ;
         }
 

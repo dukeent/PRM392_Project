@@ -40,6 +40,7 @@ public class UserProfile extends AppCompatActivity {
             reference = FirebaseDatabase.getInstance().getReference("User");
             final TextView tvgreeting = findViewById(R.id.tvGreeding);
             final TextView tvusername = findViewById(R.id.name);
+            final TextView tvusername2 = findViewById(R.id.name2);
             final TextView tvemail = findViewById(R.id.userEmail);
             final TextView tvphone = findViewById(R.id.tvphone);
 
@@ -70,6 +71,8 @@ public class UserProfile extends AppCompatActivity {
                             phone = snapshot.child("phone").getValue().toString();
                         }
                         tvgreeting.setText("welcome to your Profile ");
+
+                        tvusername2.setText(fullName);
                         tvusername.setText("Name: " + fullName);
                         tvemail.setText("" + email);
                         tvphone.setText("" + phone);

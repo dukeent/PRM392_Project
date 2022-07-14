@@ -40,7 +40,7 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.UserViewHold
         holder.tvName.setText("Name: " + staff.getName());
         holder.tvGender.setText("Gender:" + staff.getGender());
         holder.tvSpecialized.setText("Specialized: " + staff.getSpecialized());
-        Glide.with(holder.imageProduct.getContext()).load((staff.getSurl())).into(holder.imageProduct);
+        Glide.with(holder.imageStaff.getContext()).load((staff.getSurl())).into(holder.imageStaff);
     }
 
     @Override
@@ -56,14 +56,14 @@ public class StaffAdapter extends RecyclerView.Adapter<StaffAdapter.UserViewHold
         private TextView tvName;
         private TextView tvGender;
         private TextView tvSpecialized;
-        private ImageView imageProduct;
+        private ImageView imageStaff;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name);
             tvGender = itemView.findViewById(R.id.tv_gender);
             tvSpecialized = itemView.findViewById(R.id.tv_specialized);
-            imageProduct = itemView.findViewById(R.id.imageProduct);
+            imageStaff = itemView.findViewById(R.id.imageStaff);
         }
     }
 }
