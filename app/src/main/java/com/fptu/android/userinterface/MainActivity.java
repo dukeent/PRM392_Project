@@ -16,8 +16,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
-    private LinearLayout booking,signin,lucky,staff,history,rating;
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    private LinearLayout booking, signin, lucky, staff, history, rating;
     BottomNavigationView bottomNavigationView;
     private DatabaseReference reference;
     private FirebaseUser user;
@@ -29,47 +29,47 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         booking = findViewById(R.id.bookingBtn1);
 
         signin = findViewById(R.id.Loginbtn1);
-        lucky=findViewById(R.id.luckybtn1);
-        staff=findViewById(R.id.viewstaffbtn1);
-        history=findViewById(R.id.historybtn1);
-        rating=findViewById(R.id.ratingbtn1);
+        lucky = findViewById(R.id.luckybtn1);
+        staff = findViewById(R.id.viewstaffbtn1);
+        history = findViewById(R.id.historybtn1);
+        rating = findViewById(R.id.ratingbtn1);
         user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            Toast.makeText(MainActivity.this, "you have alredy Login ", Toast.LENGTH_LONG).show();
-            startActivity(new Intent( MainActivity.this, UserProfile.class));
-        }
+//        if (user != null) {
+//            Toast.makeText(MainActivity.this, "you have alredy Login ", Toast.LENGTH_LONG).show();
+//            startActivity(new Intent(MainActivity.this, UserProfile.class));
+//        }
 
-        bottomNavigationView = findViewById(R.id.bottomNavigation) ;
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( MainActivity.this, BookingActivity.class));
+                startActivity(new Intent(MainActivity.this, BookingActivity.class));
             }
         });
 
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent( MainActivity.this, Login.class));
-    }
-});
+                startActivity(new Intent(MainActivity.this, Login.class));
+            }
+        });
         lucky.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent( MainActivity.this, WheelSpin.class));
+                startActivity(new Intent(MainActivity.this, WheelSpin.class));
             }
         });
         staff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent( MainActivity.this, ViewStaff.class));
+                startActivity(new Intent(MainActivity.this, ViewStaff.class));
             }
         });
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent( MainActivity.this, ViewStaff.class)); boking history duke
+                startActivity(new Intent(MainActivity.this, BookingHistoryActivity.class));
             }
         });
         rating.setOnClickListener(new View.OnClickListener() {
@@ -80,32 +80,28 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         });
 
 
-
-
-
     }
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id=item.getItemId();
-        switch (id){
+        int id = item.getItemId();
+        switch (id) {
             case R.id.item5:
                 startActivity(new Intent(this, UserProfile.class));
-                return true ;
+                return true;
             case R.id.item4:
                 startActivity(new Intent(this, BookingActivity.class));
-
-                return true ;
+                return true;
             case R.id.item3:
-                startActivity(new Intent(this,ViewStaff .class));
-                return true ;
+                startActivity(new Intent(this, ViewStaff.class));
+                return true;
             case R.id.item2:
                 startActivity(new Intent(this, ViewProduct.class));
-                return true ;
+                return true;
             case R.id.item1:
-
-                return true ;
+                //startActivity(new Intent(this, BookingHistoryActivity.class));
+                return true;
         }
 
 

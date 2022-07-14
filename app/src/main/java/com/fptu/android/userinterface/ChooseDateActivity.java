@@ -23,8 +23,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ChooseDateActivity extends AppCompatActivity {
 
@@ -41,6 +43,7 @@ public class ChooseDateActivity extends AppCompatActivity {
     private FirebaseUser user;
     private String salonAddress;
     private DatabaseReference userReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,11 +58,13 @@ public class ChooseDateActivity extends AppCompatActivity {
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
+
         datePickerDialog = new DatePickerDialog(ChooseDateActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 bookingDate = MakeDateString(dayOfMonth, month, year);
+
                 dateView.setText(bookingDate);
             }
         }, year, month, day);
@@ -117,7 +122,7 @@ public class ChooseDateActivity extends AppCompatActivity {
         } else {
             Salon salon = (Salon) bundle.get("Salon");
             TextView textView = findViewById(R.id.salonAddress);
-            salonAddress  = salon.getSalonAddress();
+            salonAddress = salon.getSalonAddress();
             textView.setText("You are choosing: " + salon.getSalonAddress());
         }
 
@@ -161,16 +166,16 @@ public class ChooseDateActivity extends AppCompatActivity {
     }
 
     private void InsertBookingData() {
-        userReference =  FirebaseDatabase.getInstance().getReference("User");
+        userReference = FirebaseDatabase.getInstance().getReference("User");
         user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
-        String slot =  timeSlotAdapter.getItemSelected();
+        String slot = timeSlotAdapter.getItemSelected();
         String date = bookingDate;
         if (date == null || slot == null) {
-            if(date == null){
+            if (date == null) {
                 Toast.makeText(ChooseDateActivity.this, "Please Input date!", Toast.LENGTH_LONG).show();
             }
-            if(slot == null){
+            if (slot == null) {
                 Toast.makeText(ChooseDateActivity.this, "Please select 1 Slot!", Toast.LENGTH_LONG).show();
             }
         } else {
