@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -153,6 +154,8 @@ public class ChooseDateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 InsertBookingData();
+                timeSlotAdapter.notifyDataSetChanged();
+                startActivity(new Intent(ChooseDateActivity.this, MainActivity.class));
             }
         });
     }
@@ -174,6 +177,7 @@ public class ChooseDateActivity extends AppCompatActivity {
             Booking booking = new Booking(salonAddress, date, slot, userId);
             bookingRef.push().setValue(booking);
             Toast.makeText(ChooseDateActivity.this, "Booking Success!", Toast.LENGTH_LONG).show();
+
         }
     }
 

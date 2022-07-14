@@ -37,7 +37,6 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.UserView
             return;
         }
         holder.salonAddress.setText("Our address: " + salon.getSalonAddress());
-
         holder.bookingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
