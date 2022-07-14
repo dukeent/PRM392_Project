@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, Login.class));
+                startActivity(new Intent(MainActivity.this, ViewProduct.class));
             }
         });
 
@@ -72,10 +73,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View view) {
 //                startActivity(new Intent( MainActivity.this, ViewStaff.class)); ratting của hải
+                Toast.makeText(MainActivity.this, "Coming Soon", Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
 
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(new Intent(this, BookingActivity.class));
                 return true;
             case R.id.item3:
-                startActivity(new Intent(this, ViewStaff.class));
+                startActivity(new Intent(this, ViewHair.class));
                 return true;
             case R.id.item2:
                 startActivity(new Intent(this, ViewProduct.class));
