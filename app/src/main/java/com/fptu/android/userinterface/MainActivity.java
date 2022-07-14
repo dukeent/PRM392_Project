@@ -6,21 +6,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private LinearLayout booking,signin,lucky,staff,history,rating;
     BottomNavigationView bottomNavigationView;
-    private DatabaseReference reference;
-    private FirebaseUser user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +23,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_main);
         booking = findViewById(R.id.bookingBtn1);
 
-        signin = findViewById(R.id.Loginbtn1);
+        signin = findViewById(R.id.productbtn1);
         lucky=findViewById(R.id.luckybtn1);
         staff=findViewById(R.id.viewstaffbtn1);
         history=findViewById(R.id.historybtn1);
         rating=findViewById(R.id.ratingbtn1);
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            Toast.makeText(MainActivity.this, "you have alredy Login ", Toast.LENGTH_LONG).show();
-            startActivity(new Intent( MainActivity.this, UserProfile.class));
-        }
+
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigation) ;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
@@ -51,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent( MainActivity.this, Login.class));
+                startActivity(new Intent( MainActivity.this, ViewProduct.class));
     }
 });
         lucky.setOnClickListener(new View.OnClickListener() {
