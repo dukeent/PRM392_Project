@@ -15,25 +15,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.UserViewHolder>{
+public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.UserViewHolder> {
     private List<Salon> mSalonList;
     private Context mContext;
 
-    public BookingAdapter(List<Salon> salonList){
+    public BookingAdapter(List<Salon> salonList) {
         this.mSalonList = salonList;
     }
 
     @NonNull
     @Override
     public BookingAdapter.UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.booking_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.booking_item, parent, false);
         return new BookingAdapter.UserViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BookingAdapter.UserViewHolder holder, int position) {
         Salon salon = mSalonList.get(position);
-        if(salon == null){
+        if (salon == null) {
             return;
         }
         holder.salonAddress.setText("Our address: " + salon.getSalonAddress());
@@ -56,7 +56,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.UserView
 
     @Override
     public int getItemCount() {
-        if(mSalonList != null){
+        if (mSalonList != null) {
             return mSalonList.size();
         }
         return 0;
@@ -65,9 +65,10 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.UserView
     public class UserViewHolder extends RecyclerView.ViewHolder {
         private TextView salonAddress;
         private Button bookingBtn;
+
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            mContext =  itemView.getContext();
+            mContext = itemView.getContext();
             salonAddress = itemView.findViewById(R.id.salonAddress);
             bookingBtn = itemView.findViewById(R.id.bookNowBtn);
         }

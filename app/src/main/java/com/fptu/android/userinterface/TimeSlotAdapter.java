@@ -23,7 +23,7 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.UserVi
     private ArrayList<String> sectionList;
     private Context mContext;
     private Activity activity;
-    int selectedPosition=-1;
+    int selectedPosition = -1;
 
     public TimeSlotAdapter(ArrayList<String> sectionList, Activity activity) {
         this.sectionList = sectionList;
@@ -41,7 +41,9 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.UserVi
     public void onBindViewHolder(@NonNull TimeSlotAdapter.UserViewHolder holder, int position) {
         holder.setItem(sectionList.get(position));
     }
-
+    public String getItemSelected(){
+        return sectionList.get(selectedPosition);
+    }
 
     @Override
     public int getItemCount() {
@@ -56,28 +58,25 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.UserVi
     public class UserViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
+
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             mContext = itemView.getContext();
             textView = itemView.findViewById(R.id.time_slot);
-            textView.setOnClickListener(new View.OnClickListener(){
+            textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     selectedPosition = getBindingAdapterPosition();
                     notifyDataSetChanged();
-                    Intent intent = new Intent(mContext, ChooseDateActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("Slot", sectionList.get(selectedPosition));
-                    intent.putExtras(bundle);
                 }
             });
         }
+
         private void setItem(String item) {
-            if(selectedPosition == getBindingAdapterPosition()) {
+            if (selectedPosition == getBindingAdapterPosition()) {
                 textView.setBackground(ContextCompat.getDrawable(activity, R.drawable.rectangle_fill));
                 textView.setTextColor(Color.WHITE);
-            }
-            else {
+            } else {
                 textView.setBackground(ContextCompat.getDrawable(activity, R.drawable.rectangle_outline));
                 textView.setTextColor(Color.BLACK);
             }

@@ -4,14 +4,24 @@ public class Booking {
     private String salonAddress;
     private String date;
     private String slot;
+    private String userID;
+
+    public Booking(String salonAddress, String date, String slot, String userID) {
+        this.salonAddress = salonAddress;
+        this.date = date;
+        this.slot = slot;
+        this.userID = userID;
+    }
 
     public Booking() {
     }
 
-    public Booking(String salonAddress, String date, String slot) {
-        this.salonAddress = salonAddress;
-        this.date = date;
-        this.slot = slot;
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getSalonAddress() {
