@@ -66,13 +66,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 startActivity(new Intent(this, UserProfile.class));
                 return true ;
             case R.id.item4:
+                startActivity(new Intent(this, WheelSpin.class));
                 Toast.makeText(MainActivity.this, "item4", Toast.LENGTH_LONG).show();
                 return true ;
             case R.id.item3:
-                startActivity(new Intent(this, ViewStaff.class));
+                startActivity(new Intent(this, ViewProduct.class));
                 return true ;
             case R.id.item2:
-                startActivity(new Intent(this, ViewProduct.class));
+                startActivity(new Intent(this, ViewStaff.class));
                 return true ;
             case R.id.item1:
                 Toast.makeText(MainActivity.this, "1", Toast.LENGTH_LONG).show();

@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#fff"
+    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".SignUp">
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo" />
+
     <TextView
         android:id="@+id/banner"
         android:layout_width="394dp"
@@ -35,34 +37,33 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
-<!--        <EditText-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:id="@+id/username2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:hint="Username"-->
-<!--            android:orientation="vertical"/>-->
-<!--        <EditText-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:id="@+id/email"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:hint="Email" />-->
-<!--        <EditText-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:id="@+id/password2"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:hint="Password" />-->
+        <!--        <EditText-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:id="@+id/username2"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:hint="Username"-->
+        <!--            android:orientation="vertical"/>-->
+        <!--        <EditText-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:id="@+id/email"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:hint="Email" />-->
+        <!--        <EditText-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:id="@+id/password2"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:hint="Password" />-->
 
         <com.google.android.material.textfield.TextInputLayout
 
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
 
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            >
+            android:hint="Username">
 
             <EditText
 
@@ -72,21 +73,19 @@
                 android:hint="Username" />
 
 
-
-
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
 
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
             android:hint="Email">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
 
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -96,26 +95,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
 
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Password"
-            app:passwordToggleEnabled="true"
-            >
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
 
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="PhoneNumber"
 
             >
@@ -124,12 +123,10 @@
                 android:id="@+id/phone2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="phone"/>
+                android:inputType="phone" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
 
         <Button
@@ -141,6 +138,7 @@
             android:background="#f5d142"
             android:text="Sign Up"
             android:textColor="#000" />
+
         <Button
             android:id="@+id/signinuser"
             android:layout_width="match_parent"

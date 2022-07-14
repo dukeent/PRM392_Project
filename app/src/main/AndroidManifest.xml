@@ -19,6 +19,13 @@
             android:name=".ChooseDateActivity"
             android:exported="false" />
         <activity
+
+            android:name=".ViewHair"
+            android:exported="false" />
+        <activity
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
             android:name=".BookingActivity"
             android:exported="false" />
         <activity
@@ -32,20 +39,24 @@
             android:exported="false" />
         <activity
             android:name=".ChangePassword"
+
             android:exported="false" />
         <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
+            android:name=".WheelSpin"
+            android:exported="false" />
+        <activity
             android:name=".Login"
-            android:exported="false"
-            >
+            android:exported="false">
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".MainActivity"

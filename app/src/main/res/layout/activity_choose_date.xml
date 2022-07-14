@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ChooseDateActivity">
 
 
@@ -12,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
+        android:padding="10dp"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
@@ -20,25 +22,38 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:src="@drawable/salon" />
-
         <TextView
             android:id="@+id/salonAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
             android:fontFamily="sans-serif-condensed-light"
             android:text="You are choosing: Salon 2, Duc dep trai"
             android:textColor="#093960"
             android:textSize="20dp"
             android:textStyle="bold" />
-
         <Button
             android:id="@+id/chooseDateBtn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:allowClickWhenDisabled="true"
             android:text="Select date" />
+        <TextView
+            android:id="@+id/date_Textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="Select Date"
+            android:padding="10dp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_timeSlots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            tools:listitem="@layout/item_slot" />
 
         <Button
             android:id="@+id/bookNowBtn"
@@ -46,32 +61,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:text="Book Now" />
-
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearAddress"
-        tools:ignore="MissingConstraints">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="9:00 - 9:30"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            android:gravity="center_horizontal"
-            android:id="@+id/timeView"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Available"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:gravity="center_horizontal"
-            android:id="@+id/statusView"/>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
