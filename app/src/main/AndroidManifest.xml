@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Userinterface"
         tools:targetApi="31">
         <activity
+            android:name=".BookingHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChooseDateActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:background="@drawable/card_bg"
+        tools:ignore="MissingConstraints">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/avatar"
+            android:foregroundGravity="center"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="35dp">
+
+            <ImageView
+                android:id="@+id/myAvatar"
+                android:layout_width="99dp"
+                android:layout_height="107dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@drawable/salon"></ImageView>
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/avatar"
+            android:text="Booking Detail:"
+            android:textColor="@color/black"
+            android:textSize="25sp">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@id/avatar"
+            android:text="Address: 123, Ha Noi"
+            android:id="@+id/salonAddressHist"
+            android:textColor="@color/black"
+            android:textSize="20sp">
+        </TextView>
+        <TextView
+            android:id="@+id/bookingDateHist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@id/avatar"
+            android:text="Date: 31 Jul 2001"
+            android:textColor="@color/black"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/bookingTimeHist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="110dp"
+            android:layout_toRightOf="@id/avatar"
+            android:text="Time: 4:00 AM - 5:00 AM"
+            android:textColor="@color/black"
+            android:textSize="20sp"></TextView>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
