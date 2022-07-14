@@ -23,8 +23,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //logOut = findViewById(R.id.btnlogout);
         booking = findViewById(R.id.bookingBtn);
+
         bottomNavigationView = findViewById(R.id.bottomNavigation) ;
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
@@ -45,12 +47,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 //            }
 //        });
 
+
         booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( MainActivity.this, BookingActivity.class));
             }
         });
+
 
     }
 
