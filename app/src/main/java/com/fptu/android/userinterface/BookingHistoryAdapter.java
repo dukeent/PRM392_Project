@@ -42,7 +42,7 @@ public class BookingHistoryAdapter extends RecyclerView.Adapter<BookingHistoryAd
         if(mBookingList.size() != 0){
             return mBookingList.size();
         }
-        return 0;
+        return -1;
     }
 
     public class UserViewHolder extends RecyclerView.ViewHolder {
