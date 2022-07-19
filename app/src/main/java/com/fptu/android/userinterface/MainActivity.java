@@ -48,8 +48,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< Updated upstream
 
                 startActivity(new Intent(MainActivity.this, Login.class));
+=======
+                startActivity(new Intent(MainActivity.this, ViewProduct.class));
+>>>>>>> Stashed changes
             }
         });
 
@@ -80,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
