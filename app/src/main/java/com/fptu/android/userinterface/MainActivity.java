@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         rating = findViewById(R.id.ratingbtn1);
 
 
-
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         booking.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 startActivity(new Intent(MainActivity.this, ViewProduct.class));
             }
         });
@@ -77,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             }
         });
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

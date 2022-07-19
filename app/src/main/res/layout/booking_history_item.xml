@@ -50,12 +50,13 @@
             android:textColor="@color/black"
             android:textSize="20sp">
         </TextView>
+
         <TextView
             android:id="@+id/bookingDateHist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="100dp"
             android:layout_toRightOf="@id/avatar"
             android:text="Date: 31 Jul 2001"
             android:textColor="@color/black"
@@ -66,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="21dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="150dp"
             android:layout_toRightOf="@id/avatar"
             android:text="Time: 4:00 AM - 5:00 AM"
             android:textColor="@color/black"

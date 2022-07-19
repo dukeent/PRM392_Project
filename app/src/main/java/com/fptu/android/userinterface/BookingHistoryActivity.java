@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,10 +27,12 @@ public class BookingHistoryActivity extends AppCompatActivity {
     LinearLayoutManager myLayoutManager;
     private List<Booking> bookingList;
     BookingHistoryAdapter adapter;
-    private FirebaseUser user;
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    ;
     private DatabaseReference bookingRef;
     private DatabaseReference userReference;
-    private String userID;
+    private String userID = user.getUid();
+    private TextView emptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +45,6 @@ public class BookingHistoryActivity extends AppCompatActivity {
     private void BindingView() {
         bookingList = new ArrayList<>();
         userReference = FirebaseDatabase.getInstance().getReference("User");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        userID = user.getUid();
         GetBookingHistoryFromDB(userID);
     }
 
@@ -60,13 +63,15 @@ public class BookingHistoryActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot ds : snapshot.getChildren()) {
-                    if(ds.getValue(Booking.class).getUserID() == userID){
-                        Booking booking = ds.getValue(Booking.class);
+                    Booking booking = ds.getValue(Booking.class);
+                    if (booking.getUserID().equals(userID)) {
                         bookingList.add(booking);
                     }
+                    adapter.notifyDataSetChanged();
                 }
                 adapter.notifyDataSetChanged();
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
