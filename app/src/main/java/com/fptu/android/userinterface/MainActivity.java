@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         booking = findViewById(R.id.bookingBtn1);
 
 
-        signin = findViewById(R.id.Loginbtn1);
+        signin = findViewById(R.id.productbtn1);
         lucky = findViewById(R.id.luckybtn1);
         staff = findViewById(R.id.viewstaffbtn1);
         history = findViewById(R.id.historybtn1);
         rating = findViewById(R.id.ratingbtn1);
-        user = FirebaseAuth.getInstance().getCurrentUser();
+//        user = FirebaseAuth.getInstance().getCurrentUser();
 //        if (user != null) {
 //            Toast.makeText(MainActivity.this, "you have alredy Login ", Toast.LENGTH_LONG).show();
 //            startActivity(new Intent(MainActivity.this, UserProfile.class));
@@ -48,12 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-<<<<<<< Updated upstream
-
-                startActivity(new Intent(MainActivity.this, Login.class));
-=======
                 startActivity(new Intent(MainActivity.this, ViewProduct.class));
->>>>>>> Stashed changes
             }
         });
 

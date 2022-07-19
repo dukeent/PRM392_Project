@@ -158,31 +158,35 @@ public class ChooseDateActivity extends AppCompatActivity {
         bookingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InsertBookingData();
-                timeSlotAdapter.notifyDataSetChanged();
-                startActivity(new Intent(ChooseDateActivity.this, MainActivity.class));
+                boolean isTrue = InsertBookingData();
+                if(isTrue){
+                    timeSlotAdapter.notifyDataSetChanged();
+                    startActivity(new Intent(ChooseDateActivity.this, MainActivity.class));
+                }
+                else{
+                    Toast.makeText(ChooseDateActivity.this, "Please Input Date! or Select 1 Slot!", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
 
-    private void InsertBookingData() {
+    private boolean InsertBookingData() {
         userReference = FirebaseDatabase.getInstance().getReference("User");
         user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = user.getUid();
+        if(timeSlotAdapter.getItemSelected().equals("null")){
+            //Toast.makeText(ChooseDateActivity.this, "Please select 1 Slot!", Toast.LENGTH_LONG).show();
+            return false;
+        }
         String slot = timeSlotAdapter.getItemSelected();
         String date = bookingDate;
-        if (date == null || slot == null) {
-            if (date == null) {
-                Toast.makeText(ChooseDateActivity.this, "Please Input date!", Toast.LENGTH_LONG).show();
-            }
-            if (slot == null) {
-                Toast.makeText(ChooseDateActivity.this, "Please select 1 Slot!", Toast.LENGTH_LONG).show();
-            }
+        if (date.isEmpty() || slot.isEmpty()) {
+            return false;
         } else {
             Booking booking = new Booking(salonAddress, date, slot, userId);
             bookingRef.push().setValue(booking);
             Toast.makeText(ChooseDateActivity.this, "Booking Success!", Toast.LENGTH_LONG).show();
-
+            return true;
         }
     }
 

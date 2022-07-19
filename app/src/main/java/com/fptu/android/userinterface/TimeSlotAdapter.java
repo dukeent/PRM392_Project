@@ -42,7 +42,10 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.UserVi
         holder.setItem(sectionList.get(position));
     }
     public String getItemSelected(){
-        return sectionList.get(selectedPosition);
+        if(selectedPosition != -1){
+            return sectionList.get(selectedPosition);
+        }
+        return "null";
     }
 
     @Override
