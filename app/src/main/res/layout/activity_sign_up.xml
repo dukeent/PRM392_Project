@@ -18,11 +18,11 @@
     <TextView
         android:id="@+id/banner"
         android:layout_width="394dp"
-        android:layout_height="wrap_content"
+        android:layout_height="71dp"
         android:fontFamily="@font/bungee"
-        android:text="@string/god_blesh_you"
+        android:text="true beauty"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="35dp" />
 
     <TextView
         android:layout_width="wrap_content"
