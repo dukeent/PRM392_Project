@@ -40,10 +40,7 @@
         <activity
             android:name=".ViewStaff"
             android:exported="false" />
-        <activity
-            android:name=".ChangePassword"
 
-            android:exported="false" />
         <activity
             android:name=".SignUp"
             android:exported="false" />
