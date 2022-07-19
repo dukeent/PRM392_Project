@@ -2,6 +2,7 @@ package com.fptu.android.userinterface;
 
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         staff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ViewStaff.class));
+                startActivity(new Intent(MainActivity.this, Staff.class));
             }
         });
         history.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +74,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             @Override
             public void onClick(View view) {
 //                startActivity(new Intent( MainActivity.this, ViewStaff.class)); ratting của hải
-                Toast.makeText(MainActivity.this, "Coming Soon", Toast.LENGTH_LONG).show();
+                RateDialog rateDialog = new RateDialog(MainActivity.this);
+                rateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+                rateDialog.setCancelable(false);
+                rateDialog.show();
+                //Toast.makeText(MainActivity.this, "Coming Soon", Toast.LENGTH_LONG).show();
             }
         });
     }
