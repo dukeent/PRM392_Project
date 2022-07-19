@@ -98,7 +98,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         }
         if (!phone.matches("(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})")) {
-            editPhone.setError("viet nam's phone number start with 03,05,07,08,09 or+84,84 and longer than 10. pleas try again!");
+            editPhone.setError("phone number must start with 03,05,07,08,09 or+84,84 and longer than 10. pleas try again!");
 
             editPhone.requestFocus();
             return;

@@ -37,8 +37,8 @@ public class HairAdapter extends RecyclerView.Adapter<HairAdapter.UserViewHolder
         if(hair == null){
             return;
         }
-        holder.tvID.setText("ID: " + hair.getId());
-        holder.tvName.setText("Name:" + hair.getName());
+//        holder.tvID.setText("ID: " + hair.getId());
+        holder.tvName.setText(hair.getName());
         holder.tvPrice.setText("Price: " + hair.getPrice());
         Glide.with(holder.imageHair.getContext()).load((hair.getSurl())).into(holder.imageHair);
     }
@@ -60,7 +60,7 @@ public class HairAdapter extends RecyclerView.Adapter<HairAdapter.UserViewHolder
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvID = itemView.findViewById(R.id.tv_id);
+//            tvID = itemView.findViewById(R.id.tv_id);
             tvName = itemView.findViewById(R.id.tv_name);
             tvPrice = itemView.findViewById(R.id.tv_price);
             imageHair = itemView.findViewById(R.id.imageHair);
