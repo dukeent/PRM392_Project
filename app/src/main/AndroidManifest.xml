@@ -22,7 +22,6 @@
             android:name=".ChooseDateActivity"
             android:exported="false" />
         <activity
-
             android:name=".ViewHair"
             android:exported="false" />
         <activity
@@ -40,9 +39,11 @@
         <activity
             android:name=".ViewStaff"
             android:exported="false" />
-
         <activity
             android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Rate"
             android:exported="false" />
         <activity
             android:name=".WheelSpin"

@@ -20,7 +20,7 @@ public class WheelSpin extends AppCompatActivity {
     ImageView spinWheel;
     TextView tvView;
 
-    String[] sectors = {"Drinks", "Free hairStyling", "-10%", " ", "-30%"};
+    String[] sectors = {"Drinks", "Free hairStyling", "-10%", "Sorry", "-30%"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/yellow"
     tools:context=".MainActivity">
 
     <!--    <RelativeLayout-->
@@ -22,7 +22,7 @@
         android:gravity="center"
         android:text="Spin And Win Game"
         android:textColor="#FFFF"
-        android:textSize="18sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,7 +65,7 @@
         android:layout_marginStart="177dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="177dp"
-        android:textColor="#4CAF50"
+        android:textColor="#000000"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
