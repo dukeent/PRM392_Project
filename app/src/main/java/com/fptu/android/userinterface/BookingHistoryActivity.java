@@ -28,17 +28,24 @@ public class BookingHistoryActivity extends AppCompatActivity {
     LinearLayoutManager myLayoutManager;
     private List<Booking> bookingList;
     BookingHistoryAdapter adapter;
-    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    ;
+    private FirebaseUser user;
     private DatabaseReference bookingRef;
     private DatabaseReference userReference;
-    private String userID = user.getUid();
-    private TextView emptyView;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_history);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Toast.makeText(BookingHistoryActivity.this, "You haven't login yet. Please login!", Toast.LENGTH_LONG).show();
+            userID = "";
+            startActivity(new Intent(BookingHistoryActivity.this, Login.class));
+            finish();
+        } else {
+            userID = user.getUid();
+        }
         BindingView();
         BindingAction();
     }
@@ -72,6 +79,7 @@ public class BookingHistoryActivity extends AppCompatActivity {
                 }
                 adapter.notifyDataSetChanged();
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }

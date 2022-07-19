@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         staff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Staff.class));
+                startActivity(new Intent(MainActivity.this, ViewStaff.class));
             }
         });
         history.setOnClickListener(new View.OnClickListener() {

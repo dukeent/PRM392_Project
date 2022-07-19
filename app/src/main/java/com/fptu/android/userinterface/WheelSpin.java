@@ -69,16 +69,16 @@ public class WheelSpin extends AppCompatActivity {
             }
             public void CalculatePoint(int degree){
                 int initialPoint = 0;
-                int endPoint = 90;
+                int endPoint = 360/sectors.length;
                 int i = 0;
                 String res = null;
 
                 do{
-                    if(degree >initialPoint && degree<endPoint){
+                    if(degree >= initialPoint && degree <= endPoint){
                         res = sectors[i];
                     }
-                    initialPoint += 90;
-                    endPoint +=90;
+                    initialPoint += 360/sectors.length;
+                    endPoint +=360/sectors.length;
                     i++;
                 }while (res == null);
                 tvView.setText(res);

@@ -35,6 +35,7 @@ public class UserProfile extends AppCompatActivity {
         if (user == null) {
             Toast.makeText(UserProfile.this, "You haven't login yet please login!", Toast.LENGTH_LONG).show();
             startActivity(new Intent(context, Login.class));
+            finish();
         } else {
             userId = user.getUid();
             reference = FirebaseDatabase.getInstance().getReference("User");

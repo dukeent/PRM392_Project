@@ -47,7 +47,8 @@ public class BookingActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
             Toast.makeText(BookingActivity.this, "You haven't login yet. Please login!", Toast.LENGTH_LONG).show();
-            startActivity(new Intent(BookingActivity.this, Login.class));
+            startActivity(new Intent(getApplicationContext(), Login.class));
+            finish();
         } else {
             rcvSalon = findViewById(R.id.rcv_Salon);
             rcvSalon.setLayoutManager(new LinearLayoutManager(BookingActivity.this));
